@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PetCare: propuesta de plataforma para consultar y solicitar servicios para mascotas.">
+  <title>PetCare | Servicios para mascotas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="PetCare, inicio">
+      <span class="brand-icon">🐾</span>
+      <span>Pet<span class="brand-accent">Care</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#solicitud">Solicitar servicio</a>
+      <a href="#mis-solicitudes">Mis solicitudes</a>
+      <a href="#proveedor">Panel proveedor</a>
+    </nav>
+
+    <a class="button button-outline header-button" href="#mis-solicitudes">
+      Mis solicitudes
+    </a>
+  </header>
+
+  <main>
+    <!-- 1. INICIO Y CATÁLOGO -->
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">Cuidado para quienes más quieres</span>
+        <h1>Todo el cuidado de tu mascota, <span>en un solo lugar.</span></h1>
+        <p>
+          Explora servicios para tu compañero, consulta la información
+          de cada proveedor y envía tu solicitud desde una sola plataforma.
+        </p>
+
+        <form class="search-form" action="#servicios" method="get">
+          <label class="sr-only" for="buscar">¿Qué servicio necesitas?</label>
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="buscar"
+            type="search"
+            name="servicio"
+            placeholder="Ej. veterinaria, baño, paseo"
+          >
+          <button class="button button-primary" type="submit">Buscar</button>
+        </form>
+
+        <p class="hero-note">Una propuesta de catálogo y solicitudes para mascotas.</p>
+      </div>
+
+      <div class="hero-art" aria-label="Ilustración decorativa de mascotas">
+        <div class="art-circle"></div>
+        <div class="pet-emoji">🐶</div>
+        <div class="floating-card floating-card-top">
+          <span>💚</span>
+          <div>
+            <strong>Su bienestar</strong>
+            <small>Es lo importante</small>
+          </div>
+        </div>
+        <div class="floating-card floating-card-bottom">
+          <span>🐾</span>
+          <div>
+            <strong>Servicios para mascotas</strong>
+            <small>Explora las opciones</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="section section-soft" id="servicios">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Explora el catálogo</span>
+          <h2>¿Qué necesita tu mascota?</h2>
+          <p>Consulta las categorías disponibles en esta propuesta.</p>
+        </div>
+        <span class="demo-label">Contenido de ejemplo</span>
+      </div>
+
+      <div class="category-grid">
+        <a class="category-card" href="#resultados">
+          <span class="category-icon icon-peach">🩺</span>
+          <strong>Veterinaria</strong>
+          <small>Consulta y cuidado</small>
+        </a>
+        <a class="category-card" href="#resultados">
+          <span class="category-icon icon-lilac">✂️</span>
+          <strong>Baño y peluquería</strong>
+          <small>Higiene y bienestar</small>
+        </a>
+        <a class="category-card" href="#resultados">
+          <span class="category-icon icon-mint">🦮</span>
+          <strong>Paseo</strong>
+          <small>Actividad y compañía</small>
+        </a>
+        <a class="category-card" href="#resultados">
+          <span class="category-icon icon-yellow">🏡</span>
+          <strong>Cuidado temporal</strong>
+          <small>Atención durante tu ausencia</small>
+        </a>
+        <a class="category-card" href="#resultados">
+          <span class="category-icon icon-blue">💉</span>
+          <strong>Vacunación</strong>
+          <small>Prevención y cuidado</small>
+        </a>
+        <a class="category-card" href="#resultados">
+          <span class="category-icon icon-pink">🐾</span>
+          <strong>Otros servicios</strong>
+          <small>Más opciones de cuidado</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. RESULTADOS Y FILTROS -->
+    <section class="section" id="resultados">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Encuentra una opción</span>
+          <h2>Servicios destacados</h2>
+          <p>Ejemplos visuales para mostrar cómo se presentarían los resultados.</p>
+        </div>
+        <span class="demo-label">Datos ficticios</span>
+      </div>
+
+      <div class="catalog-layout">
+        <aside class="filter-panel">
+          <h3>Filtrar resultados</h3>
+
+          <label for="categoria">Categoría</label>
+          <select id="categoria" name="categoria">
+            <option>Todas las categorías</option>
+            <option>Veterinaria</option>
+            <option>Baño y peluquería</option>
+            <option>Paseo</option>
+            <option>Cuidado temporal</option>
+            <option>Vacunación</option>
+          </select>
+
+          <label for="zona">Zona o ciudad</label>
+          <input id="zona" name="zona" type="text" placeholder="Escribe una zona">
+
+          <label for="precio">Precio máximo</label>
+          <select id="precio" name="precio">
+            <option>Sin límite</option>
+            <option>Hasta $50.000</option>
+            <option>Hasta $100.000</option>
+            <option>Hasta $150.000</option>
+          </select>
+
+          <p class="field-note">
+            Los filtros son elementos visuales; requieren lógica adicional para funcionar.
+          </p>
+          <button class="button button-primary button-full" type="button">
+            Aplicar filtros
+          </button>
+        </aside>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-image service-image-vet">
+              <span>🩺</span>
+              <span class="image-tag">Veterinaria</span>
+            </div>
+            <div class="service-body">
+              <p class="service-category">Cuidado animal</p>
+              <h3>Consulta veterinaria</h3>
+              <p class="muted">Proveedor de ejemplo</p>
+              <div class="service-meta">
+                <span>📍 Zona por confirmar</span>
+                <strong>$60.000</strong>
+              </div>
+              <a class="button button-primary button-full" href="#detalle">
+                Ver servicio
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image service-image-groom">
+              <span>✂️</span>
+              <span class="image-tag">Peluquería</span>
+            </div>
+            <div class="service-body">
+              <p class="service-category">Higiene y bienestar</p>
+              <h3>Baño para mascotas</h3>
+              <p class="muted">Proveedor de ejemplo</p>
+              <div class="service-meta">
+                <span>📍 Zona por confirmar</span>
+                <strong>$40.000</strong>
+              </div>
+              <a class="button button-primary button-full" href="#detalle">
+                Ver servicio
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image service-image-walk">
+              <span>🦮</span>
+              <span class="image-tag">Paseo</span>
+            </div>
+            <div class="service-body">
+              <p class="service-category">Actividad y compañía</p>
+              <h3>Paseo de mascotas</h3>
+              <p class="muted">Proveedor de ejemplo</p>
+              <div class="service-meta">
+                <span>📍 Zona por confirmar</span>
+                <strong>$25.000</strong>
+              </div>
+              <a class="button button-primary button-full" href="#detalle">
+                Ver servicio
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DETALLE DEL SERVICIO / PROVEEDOR -->
+    <section class="section section-soft" id="detalle">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Detalle del servicio</span>
+          <h2>Consulta antes de solicitar</h2>
+          <p>Ejemplo de la información que se mostraría para una opción del catálogo.</p>
+        </div>
+        <span class="demo-label">Propuesta de interfaz</span>
+      </div>
+
+      <article class="detail-card">
+        <div class="detail-illustration">
+          <span>🐕</span>
+          <p>Imagen ilustrativa del servicio</p>
+        </div>
+
+        <div class="detail-content">
+          <span class="status-pill">Ejemplo de servicio</span>
+          <h3>Consulta veterinaria general</h3>
+          <p>
+            Descripción de ejemplo: atención general para conocer el estado
+            de salud de la mascota. La oferta real debe ser confirmada por
+            el proveedor correspondiente.
+          </p>
+
+          <div class="detail-facts">
+            <div>
+              <span>Proveedor</span>
+              <strong>Clínica de ejemplo</strong>
+            </div>
+            <div>
+              <span>Precio de referencia ficticio</span>
+              <strong>$60.000 COP</strong>
+            </div>
+            <div>
+              <span>Ubicación</span>
+              <strong>Por confirmar</strong>
+            </div>
+            <div>
+              <span>Horario</span>
+              <strong>Por confirmar</strong>
+            </div>
+          </div>
+
+          <a class="button button-primary" href="#solicitud">
+            Solicitar este servicio
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. FORMULARIO DE SOLICITUD -->
+    <section class="section" id="solicitud">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Siguiente paso</span>
+          <h2>Solicita un servicio</h2>
+          <p>Formulario de ejemplo para organizar los datos básicos de una solicitud.</p>
+        </div>
+        <span class="demo-label">Sin envío real</span>
+      </div>
+
+      <form class="form-card" action="#confirmacion" method="get">
+        <div class="form-intro">
+          <span class="form-icon">📋</span>
+          <div>
+            <h3>Datos de la solicitud</h3>
+            <p>Completa los campos propuestos para continuar.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="nombre">Nombre del propietario</label>
+            <input id="nombre" name="nombre" type="text"
+              placeholder="Tu nombre" required>
+          </div>
+
+          <div class="form-field">
+            <label for="mascota">Nombre de la mascota</label>
+            <input id="mascota" name="mascota" type="text"
+              placeholder="Nombre de tu mascota" required>
+          </div>
+
+          <div class="form-field">
+            <label for="tipo-servicio">Servicio solicitado</label>
+            <select id="tipo-servicio" name="tipo-servicio" required>
+              <option value="">Selecciona un servicio</option>
+              <option>Consulta veterinaria</option>
+              <option>Baño y peluquería</option>
+              <option>Paseo</option>
+              <option>Cuidado temporal</option>
+              <option>Vacunación</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="fecha">Fecha preferida</label>
+            <input id="fecha" name="fecha" type="date" required>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="comentarios">Información adicional</label>
+            <textarea id="comentarios" name="comentarios" rows="4"
+              placeholder="Cuéntanos qué necesita tu mascota"></textarea>
+          </div>
+        </div>
+
+        <p class="form-disclaimer">
+          Esta maqueta no transmite los datos a un servidor ni crea una reserva real.
+        </p>
+        <button class="button button-primary" type="submit">
+          Continuar (demostración)
+        </button>
+      </form>
+
+      <div class="notice-card" id="confirmacion">
+        <span>ℹ️</span>
+        <p>
+          <strong>Estado de demostración:</strong> el formulario representa
+          una propuesta. La confirmación y el almacenamiento de solicitudes
+          requieren desarrollo de backend.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. MIS SOLICITUDES -->
+    <section class="section section-soft" id="mis-solicitudes">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Seguimiento</span>
+          <h2>Mis solicitudes</h2>
+          <p>Vista propuesta para consultar el historial y los estados de las solicitudes.</p>
+        </div>
+        <span class="demo-label">Registros ficticios</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="requests-table">
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Mascota</th>
+              <th>Fecha solicitada</th>
+              <th>Estado de ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Consulta veterinaria</strong>
+                <small>Proveedor de ejemplo</small>
+              </td>
+              <td>Max</td>
+              <td>Por definir</td>
+              <td><span class="request-status status-pending">Pendiente</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Baño y peluquería</strong>
+                <small>Proveedor de ejemplo</small>
+              </td>
+              <td>Luna</td>
+              <td>Por definir</td>
+              <td><span class="request-status status-review">En revisión</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Paseo de mascotas</strong>
+                <small>Proveedor de ejemplo</small>
+              </td>
+              <td>Toby</td>
+              <td>Por definir</td>
+              <td><span class="request-status status-accepted">Aceptada</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="field-note">
+        Los estados anteriores solo ilustran el diseño; no corresponden a solicitudes reales.
+      </p>
+    </section>
+
+    <!-- 6. PANEL DEL PROVEEDOR -->
+    <section class="section" id="proveedor">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Vista para proveedores</span>
+          <h2>Panel de solicitudes recibidas</h2>
+          <p>Propuesta de interfaz para revisar solicitudes y representar sus acciones.</p>
+        </div>
+        <span class="demo-label">Panel de demostración</span>
+      </div>
+
+      <div class="provider-summary">
+        <div class="summary-card">
+          <span>Solicitudes recibidas</span>
+          <strong>03</strong>
+          <small>Dato ilustrativo</small>
+        </div>
+        <div class="summary-card">
+          <span>Pendientes</span>
+          <strong>02</strong>
+          <small>Dato ilustrativo</small>
+        </div>
+        <div class="summary-card">
+          <span>Revisadas</span>
+          <strong>01</strong>
+          <small>Dato ilustrativo</small>
+        </div>
+      </div>
+
+      <div class="provider-list">
+        <article class="provider-request">
+          <div class="avatar">🐶</div>
+          <div class="provider-request-info">
+            <h3>Solicitud de consulta</h3>
+            <p>Propietario de ejemplo · Mascota: Max</p>
+            <span class="request-status status-pending">Pendiente</span>
+          </div>
+          <div class="provider-actions">
+            <button class="button button-primary" type="button"
+              aria-label="Aceptar solicitud de ejemplo, acción no funcional">
+              Aceptar
+            </button>
+            <button class="button button-outline" type="button"
+              aria-label="Rechazar solicitud de ejemplo, acción no funcional">
+              Rechazar
+            </button>
+          </div>
+        </article>
+
+        <article class="provider-request">
+          <div class="avatar avatar-lilac">🐾</div>
+          <div class="provider-request-info">
+            <h3>Solicitud de baño</h3>
+            <p>Propietario de ejemplo · Mascota: Luna</p>
+            <span class="request-status status-review">En revisión</span>
+          </div>
+          <div class="provider-actions">
+            <button class="button button-primary" type="button"
+              aria-label="Aceptar solicitud de ejemplo, acción no funcional">
+              Aceptar
+            </button>
+            <button class="button button-outline" type="button"
+              aria-label="Rechazar solicitud de ejemplo, acción no funcional">
+              Rechazar
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <p class="field-note">
+        Los botones de aceptación y rechazo son visuales. Para cambiar estados
+        se necesita lógica de aplicación y persistencia de datos.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio">
+      <span class="brand-icon">🐾</span>
+      <span>Pet<span class="brand-accent">Care</span></span>
+    </a>
+    <p>Propuesta académica de maquetación para el MVP de PetCare.</p>
+    <a href="#inicio">Volver al inicio ↑</a>
+  </footer>
+</body>
+</html>
